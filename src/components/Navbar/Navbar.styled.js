@@ -4,7 +4,6 @@ import { Container } from "../../GlobalStyles";
 export const Nav = styled.nav`
   height: 10vh;
   width: 100%;
-  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,5 +19,5 @@ export const NavbarContainer = styled(Container)`
 
 export const Logo = styled.h1`
   color: white;
-  font-size: 3rem;
+  font-size: 1.5rem;
 `;

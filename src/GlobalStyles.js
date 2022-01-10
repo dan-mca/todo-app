@@ -17,13 +17,18 @@ body{
     background: #232229;
     color: #FFFFFF;
 }
+
+#root {
+    display: flex;
+    flex-direction: column;
+}
 `;
 
 export default GlobalStyles;
 
 export const Container = styled.div`
 margin: 0 auto;
-padding: 0 50px;
+padding: 0 calc(100vw/12);
 max-width: 1300px;
 width: 100%;
 
@@ -53,6 +58,7 @@ export const Button = styled.button`
   width: 120px;
   height: 50px;
   border-radius: 7px;
+  border: none;
   background-image: linear-gradient(180deg, #e1a0a0, #e58181);
   box-shadow: 0 10px 40px #6b3838;
 
