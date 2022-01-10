@@ -1,8 +1,12 @@
 import Home from "./containers/Home";
+import GlobalStyles from "./GlobalStyles";
 
 function App() {
   return (
-    <Home />
+    <>
+      <GlobalStyles />
+      <Home />
+    </>
   );
 }
 

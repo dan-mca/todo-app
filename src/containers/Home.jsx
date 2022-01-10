@@ -1,11 +1,11 @@
 import React from 'react';
-import { Container } from './Home.styled';
+import Navbar from '../components/Navbar/Navbar';
 
 const Home = () => {
   return (
-    <Container>
-      Home
-    </Container>
+    <>
+      <Navbar />
+    </>
   )
 }
 
