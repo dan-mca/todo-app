@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Paragraph } from '../../GlobalStyles';
 
 export const HeaderContainer = styled.header`
   display: flex;
@@ -12,9 +13,7 @@ export const HeadingText = styled.h2`
   padding: 1rem 0 2rem;
 `;
 
-export const HeadingParagraph = styled.p`
-  font-size: 1rem;
-  color: #6C6A7C;
+export const HeadingParagraph = styled(Paragraph)`
 `;
 
 export const HeadingNameInput = styled.input`

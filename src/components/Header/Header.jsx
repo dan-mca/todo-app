@@ -15,11 +15,9 @@ const Header = (props) => {
         <HeadingText>What is your name?</HeadingText>
         <HeadingNameInput 
           placeholder="Plese enter your name..."
-          // onBlur={handleInput}
           onKeyPress={handleInput}
         >
         </HeadingNameInput>
-        
       </>
       :
       <>

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Button } from '../../GlobalStyles'
-import { HeaderContainer, HeadingNameInput } from '../Header/Header.styled';
+import { Button, Paragraph } from '../../GlobalStyles'
+import { HeadingNameInput } from '../Header/Header.styled';
 
 export const AddTaskContainer = styled.section`
   display: flex;

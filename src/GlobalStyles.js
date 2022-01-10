@@ -66,3 +66,8 @@ export const Button = styled.button`
     background-image: linear-gradient(180deg, #E2C1C1, #EA8282)
   }
 `;
+
+export const Paragraph = styled.p`
+  font-size: 1rem;
+  color: #6C6A7C;
+`;
