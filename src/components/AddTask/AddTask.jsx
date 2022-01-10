@@ -8,14 +8,16 @@ const AddTask = (props) => {
   const handleChange = (e) => setInputValue(e.target.value)
 
   const handleInput = (e) => {
-    if(e.key === 'Enter') {
+    if(e.key === 'Enter' && inputValue.length > 0) {
       getTask(inputValue)
       setInputValue('')
     }
   }
 
   const handleClick = (e) => { 
-    getTask(inputValue)
+    if (inputValue.length > 0) {
+      getTask(inputValue)
+    }
     setInputValue('')
   }
 
