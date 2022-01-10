@@ -1,8 +1,8 @@
+import Home from "./containers/Home";
+
 function App() {
   return (
-    <div>
-      Working
-    </div>
+    <Home />
   );
 }
 
