@@ -7,11 +7,12 @@ export const AddTaskContainer = styled.section`
   justify-content: center;
   align-items: center;
   padding: 2rem calc((100vw/12) * 3);
-  width: calc(100% + 20px)
+  width: calc(100% + 20px);
 `;
 
 export const AddTaskInput = styled(HeadingNameInput)`
   width: 100%;
+  font-size: 1rem;
 `;
 
 
