@@ -1,39 +1,26 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { TaskContext } from '../../context/TasksProvider';
 import Task from '../Task/Task'
 import { TasksContainer, TasksHeader, TasksParagraph, TasksList } from './Tasks.styled'
 
-const Tasks = (props) => {
-  const { tasks, checkedTasks } = props;
-  const [selectedTasks, setSelectedTasks] = useState([])
-  const taskSelected = (task) => {
-    let index = selectedTasks.findIndex(el => el.id === task.id)
-    if (index < 0) {
-      checkedTasks(task)
-    }
-  }
+const Tasks = () => {
 
-  const taskUnselected = (task) => {
-    let index = selectedTasks.findIndex(el => el.id === task.id)
-    checkedTasks(task)
-  }
-
+  const taskContext = useContext(TaskContext)
   
-  
- 
   return (
-    <TasksContainer>
+    <TasksContainer >
       <TasksHeader>Tasks</TasksHeader>
-      { tasks.length === 0 ?
+      { taskContext.tasks.length === 0 ?
           <TasksParagraph>All tasks have been completed. Great job!</TasksParagraph>
         : 
         <>
           <TasksList >
-              { tasks.map((task, index) => (
-                <Task task={task} index={index} addSelectedTask={taskSelected} removeSelectedTask={taskUnselected}/>
+              { taskContext.tasks.map((task, index) => (
+                <Task task={task} index={index} />
               ))
               }
           </TasksList>
-          <TasksParagraph>Tasks to complete: {tasks.length}</TasksParagraph> 
+          <TasksParagraph>Tasks to complete: {taskContext.tasks.length}</TasksParagraph> 
         </>
       }
     </TasksContainer>
