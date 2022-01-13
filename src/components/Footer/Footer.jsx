@@ -6,11 +6,11 @@ const Footer = () => {
 
   const taskContext = useContext(TaskContext)
  
-  const handleClick = (e) => taskContext.deleteTasks(e)
+  const handleClick = (e) => taskContext.removeTasks(e)
 
   return (
     <FooterContainer>
-      <FooterText>{taskContext.checkedTasks.length} Tasks(s) Selected</FooterText>
+      <FooterText>{taskContext.count} Tasks(s) Selected</FooterText>
       <FooterDeleteButton onClick={handleClick} >
         Delete
         <FooterDeleteButtonIcon icon="fluent:delete-48-regular" id='Delete'/>

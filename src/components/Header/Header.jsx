@@ -3,7 +3,7 @@ import { HeaderContainer, HeadingText, HeadingNameInput, HeaderParagraph, Headin
 
 const Header = (props) => {
   const { getName, name } = props;
-  // const [name, setName] = useState('');
+
   const handleInput = (e) => {
     return e.key === 'Enter' ? getName(e.target.value) : null;
   }

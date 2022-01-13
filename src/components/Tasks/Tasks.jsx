@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { TaskContext } from '../../context/TasksProvider';
 import Task from '../Task/Task'
 import { TasksContainer, TasksHeader, TasksParagraph, TasksList } from './Tasks.styled'
@@ -6,8 +6,6 @@ import { TasksContainer, TasksHeader, TasksParagraph, TasksList } from './Tasks.
 const Tasks = () => {
 
   const taskContext = useContext(TaskContext)
-
-  console.log(taskContext.tasks)
 
   return (
     <TasksContainer >

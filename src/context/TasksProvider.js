@@ -4,37 +4,40 @@ export const TaskContext = createContext([])
 
 const TaskProvider = (props) => {
   const [tasks, setTasks] = useState([])
-  const [checkedTasks, setCheckedTasks] = useState([])
+  const [count, setCount] = useState(0)
 
-  const addCheckedTask = task => setCheckedTasks([...checkedTasks, task])
+  const addTask = (task) => setTasks([...tasks, {id: tasks.length, taskText: task.taskText, isChecked: false }])
 
-  const removeUncheckedTask = task => {
-    const index = checkedTasks.findIndex(el => el.id === task.id)
-    const checkedTasksCopy = [...checkedTasks]
-    checkedTasksCopy.splice(index,1)
-
-    setCheckedTasks(checkedTasksCopy)
-  }
-
-  const deleteTasks = (e) => {
-    if(e.target.innerText === 'Delete' || e.target.id === 'Delete') {
-      const filteredList = [...tasks].filter(task1 => ![...checkedTasks].find(task2 => task1.id === task2.id))
-      setTasks(filteredList)
+  const updateCheckedTasks = updatedTask => {
+    let tasksTemp = [...tasks]
+    const indexOfTask = tasksTemp.findIndex(task => task.id === updatedTask.id)
+    if(tasksTemp[indexOfTask].isChecked === false && updatedTask.isChecked === true) {
+      tasksTemp[indexOfTask] = updatedTask
+      setTasks(tasksTemp)
+      setCount(count + 1)
+    } else if (tasksTemp[indexOfTask].isChecked === true && updatedTask.isChecked === false) {
+      tasksTemp[indexOfTask] = updatedTask
+      setTasks(tasksTemp)
+      setCount(count - 1)
     }
   }
 
-  const addTask = (task) => setTasks([...tasks, {id: tasks.length, taskText: task.taskText }])
-
-  console.log(tasks)
+  const removeTasks = (e) => {
+    if(e.target.innerText === 'Delete' || e.target.id === 'Delete') {
+      const tasksToDelete = [...tasks].filter(task => !task.isChecked)
+      setTasks(tasksToDelete)
+      setCount(0)
+    }
+  }
 
   const data = {
     tasks,
     setTasks,
-    addCheckedTask,
-    removeUncheckedTask,
-    checkedTasks,
-    deleteTasks,
-    addTask
+    addTask,
+    updateCheckedTasks,
+    count,
+    setCount,
+    removeTasks
   }
   return (
     <TaskContext.Provider value={data}>

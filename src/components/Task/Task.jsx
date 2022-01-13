@@ -13,16 +13,14 @@ const Task = (props) => {
 
   const handleChange = (e) => setTaskText(e.target.value);
 
-  const handleCheckboxclick = (e) => {
-
+  const handleCheckboxClick = (e) => {
+    const taskChanged = {id: task.id, taskText, isChecked: e.target.checked}
     if (e.target.checked === true) {
-      taskContext.addCheckedTask({id: task.id, taskText})
+      taskContext.updateCheckedTasks(taskChanged)
     } else if (e.target.checked === false) {
-      taskContext.removeUncheckedTask({id: task.id, taskText})
+      taskContext.updateCheckedTasks(taskChanged)
     }
   }
-
-  console.log(task)
   
   return (
     <TaskItem key={task.id}>
@@ -32,7 +30,7 @@ const Task = (props) => {
             <TaskInput type="input" defaultValue={taskText} onChange={handleChange} id={task.id} />
           :
             <>
-              <TaskInputCheckbox type="checkbox" id={task.id} onClick={handleCheckboxclick}/>
+              <TaskInputCheckbox type="checkbox" id={task.id} onClick={handleCheckboxClick}/>
               <TaskInputLabel htmlfor={task.id}>{taskText}</TaskInputLabel>
             </>
         }

@@ -23,7 +23,7 @@ const Home = () => {
           <Tasks />
         </>
       }
-      { taskContext.checkedTasks.length > 0 &&
+      { taskContext.count > 0 &&
         <Footer />
       }
      

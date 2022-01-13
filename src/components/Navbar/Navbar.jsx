@@ -12,7 +12,7 @@ const Navbar = (props) => {
   const handleClick = () => {
     reset('')
     taskContext.setTasks([])
-    taskContext.setCheckedTasks([])
+    taskContext.setCount(0)
   };
 
   return (
