@@ -9,18 +9,23 @@ const TaskProvider = (props) => {
 
   const addTask = (task) => setTasks([...tasks, createTaskObject(tasks.length, task.taskText, false)])
 
-  const updateCheckedTasks = updatedTask => {
-    let tasksTemp = [...tasks]
+
+  const createUpdatedTaskArray = (updatedTask, allTasks) => {
+    let tasksTemp = [...allTasks]
     const indexOfTask = tasksTemp.findIndex(task => task.id === updatedTask.id)
-    if(tasksTemp[indexOfTask].isChecked === false && updatedTask.isChecked === true) {
+    if (tasksTemp[indexOfTask].isChecked === false && updatedTask.isChecked === true) {
       tasksTemp[indexOfTask] = updatedTask
-      setTasks(tasksTemp)
-      setCount(count + 1)
+      return [tasksTemp, 1]
     } else if (tasksTemp[indexOfTask].isChecked === true && updatedTask.isChecked === false) {
       tasksTemp[indexOfTask] = updatedTask
-      setTasks(tasksTemp)
-      setCount(count - 1)
+      return [tasksTemp, -1]
     }
+  }
+
+  const updateCheckedTasks = (updatedTask) => {
+    const [newArray, countUpdate] = createUpdatedTaskArray(updatedTask, tasks)
+    setTasks(newArray)
+    setCount(count + countUpdate)
   }
 
   const tasksToDelete = (allTasks) => [...allTasks].filter(task => !task.isChecked)
