@@ -17,6 +17,10 @@ export const FooterContainer = styled.footer`
 export const FooterText = styled(Paragraph)`
   color: #FFF;
   font-size: 20px;
+
+  @media (max-width:768px) {
+    font-size: 1rem;
+  }
 `;
 
 export const FooterDeleteButton = styled(Button)`
@@ -24,6 +28,10 @@ export const FooterDeleteButton = styled(Button)`
   justify-content: center;
   align-items: center;
   width: 157px;
+  @media (max-width:991px) {
+    width: 100px;
+    height: 40px;
+  }
 `;
 
 export const FooterDeleteButtonIcon = styled(Icon)`

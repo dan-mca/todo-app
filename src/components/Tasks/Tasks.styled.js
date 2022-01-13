@@ -10,6 +10,10 @@ export const TasksContainer = styled.section`
   padding: 2rem calc((100vw/12) * 3);
   padding-bottom: 10vh;
   width: 100%;
+
+  @media (max-width:991px) {
+    padding: 2rem 1rem;
+  }
 `;
 
 export const TasksHeader = styled.h3`

@@ -8,6 +8,10 @@ export const AddTaskContainer = styled.section`
   align-items: center;
   padding: 2rem calc((100vw/12) * 3);
   width: calc(100% + 20px);
+
+  @media (max-width:991px) {
+    padding: 1rem 1rem;
+  }
 `;
 
 export const AddTaskInput = styled(HeadingNameInput)`

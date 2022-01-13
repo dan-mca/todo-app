@@ -36,7 +36,7 @@ width: 100%;
     padding: 0 10px;
 }
 @media (max-width:991px) {
-    padding: 0 30px;
+    padding: 0 1rem;
 }
 
 @media (min-width: 1500px) {
@@ -70,4 +70,8 @@ export const Button = styled.button`
 export const Paragraph = styled.p`
   font-size: 1rem;
   color: #6C6A7C;
+
+  @media (max-width:991px) {
+    font-size: 1rem;
+  }
 `;

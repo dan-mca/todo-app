@@ -8,6 +8,10 @@ export const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+
+  @media (max-width:991px) {
+    padding: 20px 0;
+}
 `;
 
 export const NavbarContainer = styled(Container)`
