@@ -8,6 +8,7 @@ export const TasksContainer = styled.section`
   justify-content: center;
   align-items: flex-start;
   padding: 2rem calc((100vw/12) * 3);
+  padding-bottom: 10vh;
   width: 100%;
 `;
 
