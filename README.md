@@ -11,8 +11,12 @@ Create a To Do app:
 - a list of tasks display which can be edited, selected and deleted
 - a user can reset the page back to the default state
 
-<!-- ## Design -->
-
+## Design
+<div style={display: flex}>
+<img src="https://raw.githubusercontent.com/dan-mca/todo-app/main/src/assets/images/design-system.png" width="=300" />
+<img src="https://raw.githubusercontent.com/dan-mca/todo-app/main/src/assets/images/desktop.png" width="488" />
+<img src="https://raw.githubusercontent.com/dan-mca/todo-app/main/src/assets/images/mobile.png" width="400" />
+</div>
 
 ## Motivation
  
