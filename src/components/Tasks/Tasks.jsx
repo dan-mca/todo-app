@@ -7,6 +7,8 @@ const Tasks = () => {
 
   const taskContext = useContext(TaskContext)
 
+  console.log(taskContext.tasks)
+
   return (
     <TasksContainer >
       <TasksHeader>Tasks</TasksHeader>

@@ -22,6 +22,7 @@ const Task = (props) => {
     }
   }
 
+  console.log(task)
   
   return (
     <TaskItem key={task.id}>

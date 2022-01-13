@@ -15,7 +15,7 @@ const Home = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar reset={updateName} />
       <Header getName={updateName} name={name}/>
       { name && 
         <>

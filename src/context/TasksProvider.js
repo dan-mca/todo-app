@@ -25,6 +25,7 @@ const TaskProvider = (props) => {
 
   const addTask = (task) => setTasks([...tasks, {id: tasks.length, taskText: task.taskText }])
 
+  console.log(tasks)
 
   const data = {
     tasks,
