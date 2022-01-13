@@ -1,4 +1,5 @@
 import React, {createContext, useState} from 'react';
+import { createTaskObject } from '../utils/createTaskObject'
 
 export const TaskContext = createContext([])
 
@@ -6,7 +7,7 @@ const TaskProvider = (props) => {
   const [tasks, setTasks] = useState([])
   const [count, setCount] = useState(0)
 
-  const addTask = (task) => setTasks([...tasks, {id: tasks.length, taskText: task.taskText, isChecked: false }])
+  const addTask = (task) => setTasks([...tasks, createTaskObject(tasks.length, task.taskText, false)])
 
   const updateCheckedTasks = updatedTask => {
     let tasksTemp = [...tasks]
@@ -22,10 +23,11 @@ const TaskProvider = (props) => {
     }
   }
 
+  const tasksToDelete = (allTasks) => [...allTasks].filter(task => !task.isChecked)
+
   const removeTasks = (e) => {
     if(e.target.innerText === 'Delete' || e.target.id === 'Delete') {
-      const tasksToDelete = [...tasks].filter(task => !task.isChecked)
-      setTasks(tasksToDelete)
+      setTasks(tasksToDelete(tasks))
       setCount(0)
     }
   }

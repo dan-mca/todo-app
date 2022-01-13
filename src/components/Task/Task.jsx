@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { TaskContext } from "../../context/TasksProvider";
+import { createTaskObject } from "../../utils/createTaskObject";
 import { TaskItem, TaskEditIcon, TaskInput, TaskInputContainer, TaskInputLabel, TaskInputCheckbox } from './Task.styled'
 
 const Task = (props) => {
@@ -14,12 +15,8 @@ const Task = (props) => {
   const handleChange = (e) => setTaskText(e.target.value);
 
   const handleCheckboxClick = (e) => {
-    const taskChanged = {id: task.id, taskText, isChecked: e.target.checked}
-    if (e.target.checked === true) {
-      taskContext.updateCheckedTasks(taskChanged)
-    } else if (e.target.checked === false) {
-      taskContext.updateCheckedTasks(taskChanged)
-    }
+    const taskChanged = createTaskObject(task.id, taskText, e.target.checked)
+    taskContext.updateCheckedTasks(taskChanged)
   }
   
   return (
