@@ -18,7 +18,7 @@ const Tasks = () => {
         <>
           <TasksList >
               { taskContext.tasks.map((task) => (
-                <Task task={task} />
+                <Task task={task} key={task.id}/>
               ))
               }
           </TasksList>
