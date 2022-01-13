@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.e8416eed.css","mappings":"6FAEA,KAEE,qBAAsB,CADtB,QAEF","sources":["index.css"],"sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap');\n\nbody {\n  margin: 0;\n  box-sizing: border-box;\n}\n\n"],"names":[],"sourceRoot":""}
