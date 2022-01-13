@@ -6,7 +6,7 @@ import { TasksContainer, TasksHeader, TasksParagraph, TasksList } from './Tasks.
 const Tasks = () => {
 
   const taskContext = useContext(TaskContext)
-  
+
   return (
     <TasksContainer >
       <TasksHeader>Tasks</TasksHeader>
@@ -15,8 +15,8 @@ const Tasks = () => {
         : 
         <>
           <TasksList >
-              { taskContext.tasks.map((task, index) => (
-                <Task task={task} index={index} />
+              { taskContext.tasks.map((task) => (
+                <Task task={task} />
               ))
               }
           </TasksList>

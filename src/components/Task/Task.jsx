@@ -3,7 +3,7 @@ import { TaskContext } from "../../context/TasksProvider";
 import { TaskItem, TaskEditIcon, TaskInput, TaskInputContainer, TaskInputLabel, TaskInputCheckbox } from './Task.styled'
 
 const Task = (props) => {
-  const {task, index} = props;
+  const {task} = props;
   const taskContext = useContext(TaskContext)
 
   const [isClicked, setIsClicked] = useState(false)
@@ -16,26 +16,27 @@ const Task = (props) => {
   const handleCheckboxclick = (e) => {
 
     if (e.target.checked === true) {
-      taskContext.addCheckedTask({id: index,taskText})
+      taskContext.addCheckedTask({id: task.id, taskText})
     } else if (e.target.checked === false) {
-      taskContext.removeUncheckedTask({id: index,taskText})
+      taskContext.removeUncheckedTask({id: task.id, taskText})
     }
   }
+
   
   return (
-    <TaskItem key={index}>
+    <TaskItem key={task.id}>
       <TaskInputContainer>
         {
           isClicked ? 
-            <TaskInput type="input" defaultValue={taskText} onChange={handleChange} id={index} />
+            <TaskInput type="input" defaultValue={taskText} onChange={handleChange} id={task.id} />
           :
             <>
-              <TaskInputCheckbox type="checkbox" id={index} onClick={handleCheckboxclick}/>
-              <TaskInputLabel htmlfor={index}>{taskText}</TaskInputLabel>
+              <TaskInputCheckbox type="checkbox" id={task.id} onClick={handleCheckboxclick}/>
+              <TaskInputLabel htmlfor={task.id}>{taskText}</TaskInputLabel>
             </>
         }
       </TaskInputContainer>
-      <TaskEditIcon icon="clarity:edit-line" value={index} onClick={handleClick}/>
+      <TaskEditIcon icon="clarity:edit-line" onClick={handleClick}/>
     </TaskItem>
   );
 };
